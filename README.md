@@ -8,7 +8,13 @@
     git clone https://github.com/damshxy/backend-test.git
 ```
 
-2. Run the Applicaton
+2. Adding Dependencies
+
+```
+    go mod tidy
+```
+
+3. Run the Applicaton
 
 ```
     go run main.go
@@ -289,7 +295,6 @@
 
 ### Order
 
-
 #### Endpoint for Get All Order
 
 ```
@@ -340,7 +345,6 @@
     localhost:3000/api/v1/order/2/complete
 ```
 
-
 #### Response :
 
 ```
@@ -354,6 +358,3 @@
         "message": "Order completed successfully"
     }
 ```
-
-
-
