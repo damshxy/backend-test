@@ -7,8 +7,6 @@ import (
 
 func OrderRoutes(r fiber.Router) {
 	r.Get("/orders", handlers.GetOrders)
-	r.Get("/order/:id", handlers.GetOrderByID)
-	r.Post("/order", handlers.CreateOrder)
-	r.Patch("/order/:id", handlers.UpdateOrder)
-	r.Delete("/order/:id", handlers.DeleteOrder)
+	r.Patch("/order/:id/process", handlers.ProcessOrder)
+	r.Patch("/order/:id/complete", handlers.CompleteOrder)
 }
