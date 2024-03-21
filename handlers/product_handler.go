@@ -26,11 +26,11 @@ func GetProducts(c *fiber.Ctx) error {
 
 func GetProductByID(c *fiber.Ctx) error {
 	id := c.Params("id")
-	var product models.Product
 
+	var product models.Product
 	err := database.DB.First(&product, id).Error
 	if err != nil {
-		return c.JSON(fiber.Map{
+		c.JSON(fiber.Map{
 			"status":  fiber.StatusBadRequest,
 			"message": "Error fetching product",
 		})

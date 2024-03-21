@@ -9,7 +9,7 @@ import (
 func GetAllUser(c *fiber.Ctx) error {
 	var users []models.User
 
-	err := database.DB.Find(&users).Error
+	err := database.DB.Order("id").Find(&users).Error
 	if err != nil {
 		return c.JSON(fiber.Map{
 			"status":  fiber.StatusBadRequest,
